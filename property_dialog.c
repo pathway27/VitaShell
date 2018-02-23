@@ -40,6 +40,7 @@ static PropertyDialog property_dialog;
 
 static char property_name[256], property_type[32], property_fself_mode[16];
 static char property_size[16], property_size_new[16];
+static char property_permissions[256];
 static char property_compressed_size[16];
 static char property_contains[64], property_contains_new[64];
 static char property_creation_date[64], property_modification_date[64];
@@ -65,6 +66,7 @@ PropertyEntry property_entries[] = {
   { PROPERTY_TYPE, PROPERTY_ENTRY_VISIBLE, property_type, sizeof(property_type) },
   { PROPERTY_FSELF_MODE, PROPERTY_ENTRY_VISIBLE, property_fself_mode, sizeof(property_fself_mode) },
   { PROPERTY_SIZE, PROPERTY_ENTRY_VISIBLE, property_size, sizeof(property_size) },
+  { PROPERTY_PERMISSIONS, PROPERTY_ENTRY_VISIBLE, property_permissions, sizeof(property_permissions) },
   // { PROPERTY_COMPRESSED_SIZE, PROPERTY_ENTRY_VISIBLE, property_compressed_size, sizeof(property_compressed_size) },
   { PROPERTY_CONTAINS, PROPERTY_ENTRY_VISIBLE, property_contains, sizeof(property_contains) },
   { -1, PROPERTY_ENTRY_UNUSED, NULL },
@@ -77,6 +79,7 @@ enum PropertyEntries {
   PROPERTY_ENTRY_TYPE,
   PROPERTY_ENTRY_FSELF_MODE,
   PROPERTY_ENTRY_SIZE,
+  PROPERTY_ENTRY_PERMISSIONS,
   // PROPERTY_ENTRY_COMPRESSED_SIZE,
   PROPERTY_ENTRY_CONTAINS,
   PROPERTY_ENTRY_EMPTY_1,
@@ -296,6 +299,8 @@ int initPropertyDialog(char *path, FileListEntry *entry) {
       property_entries[PROPERTY_ENTRY_COMPRESSED_SIZE].visibility = PROPERTY_ENTRY_INVISIBLE;
     }*/
   }
+
+
 
   // Dates
   char date_string[16];

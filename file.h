@@ -79,6 +79,7 @@ typedef struct FileListEntry {
   int type;
   SceOff size;
   SceOff size2;
+  SceMode permissions;
   SceDateTime ctime;
   SceDateTime mtime;
   SceDateTime atime;

@@ -1037,6 +1037,7 @@ int fileListGetDirectoryEntries(FileList *list, const char *path, int sort) {
           list->files++;
         }
 
+        entry->permissions = dir.d_stat.st_mode;
         entry->size = dir.d_stat.st_size;
 
         memcpy(&entry->ctime, (SceDateTime *)&dir.d_stat.st_ctime, sizeof(SceDateTime));
